@@ -28,7 +28,7 @@ export default function Page() {
             <MorphoLogoSvg width={24} height={24} />
             Morpho
           </div>
-          <div className="flex items-center gap-2 rounded-full bg-transparent p-1">
+          <div className="flex items-center gap-3 rounded-full bg-transparent p-1">
             <Button
               variant={selectedSubPage === SubPage.Earn ? "tertiary" : "secondaryTab"}
               size="lg"

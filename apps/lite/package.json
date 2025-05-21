@@ -18,6 +18,9 @@
     "tada:cache": "gql-tada turbo"
   },
   "dependencies": {
+    "@arcana/ca-sdk": "^0.0.7-beta.1",
+    "@arcana/ca-wagmi": "^0.0.6",
+    "@ark-ui/react": "^5.0.0",
     "@merkl/api": "^0.20.171",
     "@morpho-org/blue-sdk": "^2.3.1",
     "@morpho-org/uikit": "workspace:*",
@@ -26,6 +29,7 @@
     "@tanstack/react-query-persist-client": "^5.66.0",
     "blo": "^1.2.0",
     "connectkit": "^1.8.2",
+    "decimal.js": "^10.5.0",
     "gql.tada": "^1.8.10",
     "humanize-duration": "^3.32.1",
     "lucide-react": "^0.475.0",
@@ -35,10 +39,12 @@
     "react-router": "^7.4.0",
     "recharts": "^2.15.1",
     "sonner": "^2.0.0",
+    "styled-components": "^6.1.15",
     "tailwind-merge": "^3.0.1",
     "tailwindcss-animate": "^1.0.7",
     "urql": "^4.2.2",
     "viem": "~2.23.5",
+    "vite-plugin-node-polyfills": "^0.23.0",
     "wagmi": "2.14.15"
   },
   "devDependencies": {
@@ -46,6 +52,7 @@
     "@tailwindcss/vite": "^4.0.6",
     "@vitejs/plugin-legacy": "^6.1.1",
     "@vitejs/plugin-react": "^4.3.4",
+    "axios": "^1.6.2",
     "tailwindcss": "^4.0.6",
     "terser": "^5.39.0",
     "typescript": "~5.7.2",

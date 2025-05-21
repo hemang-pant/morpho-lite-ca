@@ -8,6 +8,7 @@ import { ConnectKitProvider } from "connectkit";
 import { ReactNode } from "react";
 import { Client as UrqlClient, Provider as UrqlProvider, fetchExchange } from "urql";
 import { type Config, deserialize, serialize, WagmiProvider } from "wagmi";
+import { CAProvider } from "../src/ca-ui/src/ca_provider"
 
 import { TERMS_OF_USE } from "@/lib/constants";
 import { createConfig } from "@/lib/wagmi-config";
@@ -25,6 +26,9 @@ const queryClient = new QueryClient({
   },
 });
 
+  console.log("App", window.ethereum);
+  // useCaSdkAuth(window.ethereum);
+
 const persister = createSyncStoragePersister({
   serialize,
   storage: window.localStorage,
@@ -41,6 +45,7 @@ function App({ children, wagmiConfig = defaultWagmiConfig }: { children: ReactNo
   return (
     <WagmiProvider config={wagmiConfig}>
       <PersistQueryClientProvider client={queryClient} persistOptions={{ persister, buster: "v1" }}>
+        <CAProvider>
         <ConnectKitProvider
           theme="auto"
           mode="dark"
@@ -63,6 +68,7 @@ function App({ children, wagmiConfig = defaultWagmiConfig }: { children: ReactNo
             </AddressScreeningProvider>
           </UrqlProvider>
         </ConnectKitProvider>
+      </CAProvider>
       </PersistQueryClientProvider>
     </WagmiProvider>
   );

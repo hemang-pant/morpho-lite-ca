@@ -13,12 +13,13 @@ import { TransactionButton } from "@morpho-org/uikit/components/transaction-butt
 import { formatBalance, Token } from "@morpho-org/uikit/lib/utils";
 import { keepPreviousData } from "@tanstack/react-query";
 import { CircleArrowLeft } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Toaster } from "sonner";
-import { Address, erc20Abi, erc4626Abi, parseUnits } from "viem";
+import { Address, Chain, erc20Abi, erc4626Abi, parseUnits } from "viem";
 import { useAccount, useReadContract, useReadContracts } from "wagmi";
-
 import { RISKS_DOCUMENTATION } from "@/lib/constants";
+import { useCAFn, useUnifiedBalance } from "../ca-ui/src";
+import { useOutletContext } from "react-router";
 
 enum Actions {
   Deposit = "Deposit",
@@ -36,6 +37,11 @@ export function EarnSheetContent({ vaultAddress, asset }: { vaultAddress: Addres
 
   const [selectedTab, setSelectedTab] = useState(Actions.Deposit);
   const [textInputValue, setTextInputValue] = useState("");
+
+  const { bridge } = useCAFn();
+  const [txnConfig, setTxnConfig] = useState<typeof depositTxnConfig | undefined>(undefined);
+  const [isBridging, setIsBridging] = useState(false);
+  const bridgeRequired = true; // or determine dynamically
 
   const { data: allowance, refetch: refetchAllowance } = useReadContract({
     address: asset.address,
@@ -55,8 +61,19 @@ export function EarnSheetContent({ vaultAddress, asset }: { vaultAddress: Addres
     query: { enabled: !!userAddress, staleTime: 1 * 60 * 1000, placeholderData: keepPreviousData },
   });
 
+  const caBalances = useUnifiedBalance().balances;
+  console.log("maxes", maxes?.[2]);
+
+  const { chain } = useOutletContext() as { chain?: Chain };
+  const chainId = chain?.id;
+
   const inputValue = asset.decimals !== undefined ? parseUnits(textInputValue, asset.decimals) : undefined;
   const isMaxed = inputValue === maxes?.[0];
+
+  useEffect(() => {
+    // Reset txnConfig when input changes
+    setTxnConfig(undefined);
+  }, [inputValue]);
 
   const approvalTxnConfig =
     userAddress !== undefined && inputValue !== undefined && allowance !== undefined && allowance < inputValue
@@ -142,7 +159,16 @@ export function EarnSheetContent({ vaultAddress, asset }: { vaultAddress: Addres
             <TokenAmountInput
               decimals={asset.decimals}
               value={textInputValue}
-              maxValue={maxes?.[2]}
+              maxValue={
+                caBalances.find((balance) => balance.symbol === (asset.symbol! == "WETH" ? "ETH" : asset.symbol))
+                  ?.balance && asset.decimals !== undefined
+                  ? parseUnits(
+                      caBalances.find((balance) => balance.symbol === (asset.symbol! == "WETH" ? "ETH" : asset.symbol))!
+                        .balance,
+                      asset.decimals,
+                    )
+                  : maxes?.[2]
+              }
               onChange={setTextInputValue}
             />
           </div>
@@ -159,11 +185,56 @@ export function EarnSheetContent({ vaultAddress, asset }: { vaultAddress: Addres
               variables={depositTxnConfig}
               disabled={!inputValue}
               onTxnReceipt={() => {
+                console.log("✅ Deposit completed");
                 setTextInputValue("");
                 void refetchMaxes();
               }}
             >
-              Deposit
+              <span
+                onClick={async (e) => {
+                  e.stopPropagation();
+                  console.log(Number(textInputValue));
+                  if (
+                    Number(textInputValue) -
+                      Number(
+                        caBalances
+                          .find((balance) => balance.symbol === (asset.symbol! == "WETH" ? "ETH" : asset.symbol))
+                          ?.breakdown.find((b) => b.chain.id == chainId)?.balance,
+                      ) >
+                    0
+                  ) {
+                    try {
+                      setIsBridging(true);
+                      console.log("🌉 Running bridge...");
+                      await bridge({
+                        amount: (
+                          Number(textInputValue) -
+                          Number(
+                            caBalances
+                              .find((balance) => balance.symbol === (asset.symbol! == "WETH" ? "ETH" : asset.symbol))
+                              ?.breakdown.find((b) => b.chain.id == chainId)?.balance,
+                          )
+                        ).toString(),
+                        token: ["USDC", "USDT", "ETH", "usdc", "usdt", "eth"].find(
+                          (token) => token === (asset.symbol === "WETH" ? "ETH" : asset.symbol),
+                        ) as "USDC" | "USDT" | "ETH" | "usdc" | "usdt" | "eth",
+                        chain: chainId,
+                        gas: BigInt(0),
+                      });
+                      console.log("✅ Bridge complete");
+                    } catch (err) {
+                      console.error("❌ Bridge failed:", err);
+                      setIsBridging(false);
+                      return;
+                    }
+                  }
+
+                  setTxnConfig(depositTxnConfig); // ✅ set after bridge
+                  setIsBridging(false);
+                }}
+              >
+                {isBridging ? "Bridging..." : bridgeRequired ? "Bridge & Deposit" : "Deposit"}
+              </span>
             </TransactionButton>
           )}
         </TabsContent>

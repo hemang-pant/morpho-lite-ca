@@ -1,6 +1,6 @@
 /// <reference types="vitest/config" />
 import path from "path";
-
+import { nodePolyfills } from "vite-plugin-node-polyfills";
 import tailwindcss from "@tailwindcss/vite";
 import legacy from "@vitejs/plugin-legacy";
 import react from "@vitejs/plugin-react";
@@ -13,6 +13,15 @@ export default defineConfig({
     svgr(),
     tailwindcss(),
     react(),
+    nodePolyfills({
+      include: ["buffer", "events"],
+      globals: {
+        Buffer: true,
+        global: true,
+        process: true,
+      },
+      protocolImports: true,
+    }),
     legacy({ targets: ["defaults", "not IE 11"], modernPolyfills: ["es.array.iterator"] }),
   ],
   resolve: {
@@ -25,5 +34,8 @@ export default defineConfig({
     environment: "jsdom",
     setupFiles: ["./test/setup.ts"],
     globalSetup: ["./test/global-setup.ts"],
+  },
+  define: {
+    "process.env": process.env,
   },
 });
