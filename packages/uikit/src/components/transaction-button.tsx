@@ -21,16 +21,20 @@ export function TransactionButton<
   args extends ContractFunctionArgs<abi, "nonpayable" | "payable", functionName>,
   chainId extends config["chains"][number]["id"],
   config extends Config = ResolvedRegister["config"],
+  
 >({
   children,
   variables,
   disabled,
   onTxnReceipt,
+  beforeTxn,  // NEW prop
+
 }: {
   children: React.ReactNode;
   variables?: WriteContractVariables<abi, functionName, args, config, chainId>;
   disabled: boolean;
   onTxnReceipt?: (receipt: TransactionReceipt) => void;
+  beforeTxn?: () => Promise<void>;  // NEW prop type
 }) {
   const [isWaitingForUser, setIsWaitingForUser] = useState(false);
   const [txnHash, setTxnHash] = useState<Hash | undefined>(undefined);
@@ -59,9 +63,26 @@ export function TransactionButton<
     <Button
       className="text-md mt-3 h-12 w-full rounded-full font-light"
       variant="blue"
-      onClick={() => {
+      onClick={async () => {
+        console.log("Button clicked");
         setIsWaitingForUser(true);
         setTxnHash(undefined);
+        if (beforeTxn) {
+              console.log("Running beforeTxn...");  // <--- add this debug line
+          try {
+            console.log("Running pre-transaction step...");
+            await beforeTxn(); 
+             // Run your bridge function here
+                   console.log("beforeTxn done.");      // <--- add this debug line
+
+          } catch (err) {
+            setIsWaitingForUser(false);
+            toast.error("Pre-transaction step failed.");
+            console.error(err);
+            return;
+          }
+        }
+
         // @ts-expect-error wagmi is weird
         writeContract(variables, {
           onSettled(txnHash, err: BaseError) {
