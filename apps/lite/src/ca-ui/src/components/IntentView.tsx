@@ -9,7 +9,6 @@ import { getReadableNumber } from '../utils/commonFunction';
 import type { Intent } from '@arcana/ca-sdk';
 // import { getSupplyVal } from 'src/components/transactions/Supply/SupplyActions';
 import { useUnifiedBalance } from '../hooks/useUnifiedBalance';
-import Decimal from 'decimal.js';
 
 const MainContainer = styled(MainContainerBase)``;
 const Root = styled(Accordion.Root)`

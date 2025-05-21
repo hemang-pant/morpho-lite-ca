@@ -39,7 +39,7 @@ export function EarnSheetContent({ vaultAddress, asset }: { vaultAddress: Addres
   const [textInputValue, setTextInputValue] = useState("");
 
   const { bridge } = useCAFn();
-  const [txnConfig, setTxnConfig] = useState<typeof depositTxnConfig | undefined>(undefined);
+  // const [ setTxnConfig] = useState<typeof depositTxnConfig | undefined>(undefined);
   const [isBridging, setIsBridging] = useState(false);
   const bridgeRequired = true; // or determine dynamically
 
@@ -72,7 +72,7 @@ export function EarnSheetContent({ vaultAddress, asset }: { vaultAddress: Addres
 
   useEffect(() => {
     // Reset txnConfig when input changes
-    setTxnConfig(undefined);
+    // setTxnConfig(undefined);
   }, [inputValue]);
 
   const approvalTxnConfig =
@@ -229,7 +229,7 @@ export function EarnSheetContent({ vaultAddress, asset }: { vaultAddress: Addres
                     }
                   }
 
-                  setTxnConfig(depositTxnConfig); // ✅ set after bridge
+                  // setTxnConfig(depositTxnConfig); // ✅ set after bridge
                   setIsBridging(false);
                 }}
               >

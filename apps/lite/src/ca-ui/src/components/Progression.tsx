@@ -113,7 +113,7 @@ const Progress: React.FC<{
   console.log('extraSteps Status: ', extraSteps[0].done, extraSteps[1].done);
   const steps = [...basicSteps, ...extraSteps];
   const incompleteStep = steps.findIndex((s) => s.done === false);
-  const [manualDone, setManualDone] = useState(false);
+  const [manualDone, ] = useState(false);
   console.log('incompleteStep: ', incompleteStep);
   const currentStep = incompleteStep === -1 ? steps.length : incompleteStep + 1;
   const inProgressState = incompleteStep === -1 ? 'success' : 'inprogress';
