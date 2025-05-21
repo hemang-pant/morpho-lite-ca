@@ -20,7 +20,6 @@ import { useAccount, useReadContract, useReadContracts } from "wagmi";
 import { RISKS_DOCUMENTATION } from "@/lib/constants";
 import { useCAFn, useUnifiedBalance } from "../ca-ui/src";
 import { useOutletContext } from "react-router";
-import React from "react";
 
 
 
