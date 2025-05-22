@@ -13,6 +13,7 @@ import { MorphoMenu } from "@/components/morpho-menu";
 import { RewardsButton } from "@/components/rewards-button";
 import { WelcomeModal } from "@/components/welcome-modal";
 import { APP_DETAILS, CORE_DEPLOYMENTS, WORDMARK } from "@/lib/constants";
+import { useBalanceModal } from "@/ca-ui/src/hooks/useUnifiedBalance";
 
 enum SubPage {
   Earn = "earn",
@@ -37,6 +38,7 @@ function ConnectWalletButton() {
 export default function Page() {
   const navigate = useNavigate();
   const { chain: selectedChainSlug } = useParams();
+  const { showModal } = useBalanceModal();
 
   const location = useLocation();
   const locationSegments = location.pathname.toLowerCase().split("/").slice(1);
@@ -95,6 +97,19 @@ export default function Page() {
                 Borrow
               </Button>
             </Link>
+              <Button
+                variant={selectedSubPage === SubPage.Borrow ? "tertiary" : "secondaryTab"}
+                size="lg"
+                className="rounded-full px-4 font-light md:px-6"
+                onClick={() => {
+                  showModal();
+                }
+                }
+              >
+                Show Unified Balance
+              </Button>
+
+
           </div>
         </div>
         <div className="flex items-center gap-2">
