@@ -9,7 +9,7 @@ import {
 } from "@morpho-org/uikit/components/shadcn/sheet";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@morpho-org/uikit/components/shadcn/tabs";
 import { TokenAmountInput } from "@morpho-org/uikit/components/token-amount-input";
-import { TransactionButton } from "@morpho-org/uikit/components/transaction-button";
+import { TransactionButton } from "../../../../packages/uikit/src/components/transaction-button";
 import { formatBalance, Token } from "@morpho-org/uikit/lib/utils";
 import { keepPreviousData } from "@tanstack/react-query";
 import { CircleArrowLeft } from "lucide-react";
@@ -198,8 +198,15 @@ export function EarnSheetContent({ vaultAddress, asset }: { vaultAddress: Addres
   disabled={!inputValue}
   beforeTxn={async () => {
     if (bridgeRequired) {
+      console.log((Number(textInputValue) - 
+          Number(
+            caBalances
+              .find((balance) => balance.symbol === (asset.symbol! == "WETH" ? "ETH" : asset.symbol))
+              ?.breakdown.find((b) => b.chain.id == chainId)?.balance,
+          )
+      ).toString())
       await bridge({
-        amount: (Number(inputValue) - 
+        amount: (Number(textInputValue) - 
           Number(
             caBalances
               .find((balance) => balance.symbol === (asset.symbol! == "WETH" ? "ETH" : asset.symbol))

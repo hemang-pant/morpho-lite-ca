@@ -13,7 +13,7 @@ import {
 } from "wagmi";
 import { type WriteContractVariables } from "wagmi/query";
 
-import { Button } from "@/components/shadcn/button";
+import { Button } from "../components/shadcn/button";
 
 export function TransactionButton<
   const abi extends Abi | readonly unknown[],
@@ -65,8 +65,6 @@ export function TransactionButton<
       variant="blue"
       onClick={async () => {
         console.log("Button clicked");
-        setIsWaitingForUser(true);
-        setTxnHash(undefined);
         if (beforeTxn) {
               console.log("Running beforeTxn...");  // <--- add this debug line
           try {
@@ -82,6 +80,9 @@ export function TransactionButton<
             return;
           }
         }
+        console.log("abcd")
+        setIsWaitingForUser(true);
+        setTxnHash(undefined);
 
         // @ts-expect-error wagmi is weird
         writeContract(variables, {
