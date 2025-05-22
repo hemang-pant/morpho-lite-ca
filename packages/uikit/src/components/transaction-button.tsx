@@ -15,6 +15,35 @@ import { type WriteContractVariables } from "wagmi/query";
 
 import { Button } from "../components/shadcn/button";
 
+let manual_step_1_done = false;
+let manual_step_2_done = false;
+let checkFail1 = false;
+let checkFail2 = false;
+
+
+export const getManualStepsStatus = () => {
+  const steps = [
+    { type: 'MANUAL_STEP_1', done: manual_step_1_done },
+    { type: 'MANUAL_STEP_2', done: manual_step_2_done },
+  ];
+  return steps;
+};
+
+export const getFailStatus = () => {
+  const steps = [
+    { type: 'CHECK_FAIL_1', done: checkFail1 },
+    { type: 'CHECK_FAIL_2', done: checkFail2 },
+  ];
+  return steps;
+};
+
+export const refreshStepState = () => {
+  manual_step_1_done = false;
+  manual_step_2_done = false;
+  checkFail1 = false;
+  checkFail2 = false;
+};
+
 export function TransactionButton<
   const abi extends Abi | readonly unknown[],
   functionName extends ContractFunctionName<abi, "nonpayable" | "payable">,
@@ -64,6 +93,9 @@ export function TransactionButton<
       className="text-md mt-3 h-12 w-full rounded-full font-light"
       variant="blue"
       onClick={async () => {
+        refreshStepState();
+        setIsWaitingForUser(true);
+        setTxnHash(undefined);
         console.log("Button clicked");
         if (beforeTxn) {
               console.log("Running beforeTxn...");  // <--- add this debug line
@@ -75,6 +107,10 @@ export function TransactionButton<
 
           } catch (err) {
             setIsWaitingForUser(false);
+            manual_step_1_done = false;
+        manual_step_2_done = false;
+        checkFail1 = true;
+        checkFail2 = true;
             toast.error("Pre-transaction step failed.");
             console.error(err);
             return;
@@ -86,8 +122,16 @@ export function TransactionButton<
 
         // @ts-expect-error wagmi is weird
         writeContract(variables, {
+          onSuccess(txnHash) {
+            setIsWaitingForUser(false);
+            manual_step_1_done = true;
+            manual_step_2_done = true;
+            console.log("Transaction hash:", txnHash);
+          },
           onSettled(txnHash, err: BaseError) {
             setIsWaitingForUser(false);
+            manual_step_1_done = true;
+            manual_step_2_done = true;
             if (err != null) {
               toast.error(err.shortMessage);
               console.log(err.message);

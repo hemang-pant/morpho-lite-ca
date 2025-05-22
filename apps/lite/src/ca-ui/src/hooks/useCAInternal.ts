@@ -8,6 +8,7 @@ import {
 import { useState, useEffect, useRef } from 'react';
 import { clearAsyncInterval, setAsyncInterval } from '../utils/commonFunction';
 import { useAccount, useAccountEffect } from 'wagmi';
+import { getFailStatus} from '../../../../../../packages/uikit/src/components/transaction-button';
 // import { getFailStatus } from 'src/libs/web3-data-provider/Web3Provider';
 
 type CurrentStep = 'ub' | 'allowance' | 'intent' | 'progression' | 'loading' | 'none' | 'error';
@@ -51,17 +52,17 @@ const useCAInternal = (ca: CA) => {
     }
     intentP.current.deny();
   };
-  //
+  
 
-  // useEffect(() => {
-  //   console.log('getFailStatus: ', getFailStatus());
-  //   if (getFailStatus()[0].done === true || getFailStatus()[1].done === true) {
-  //     setCurrentStep('error');
-  //   }
-  //   if (error) {
-  //     setCurrentStep('error');
-  //   }
-  // }, [error]);
+  useEffect(() => {
+    console.log('getFailStatus: ', getFailStatus());
+    if (getFailStatus()[0].done === true || getFailStatus()[1].done === true) {
+      setCurrentStep('error');
+    }
+    if (error) {
+      setCurrentStep('error');
+    }
+  }, [error]);
 
   useEffect(() => {
     if (ca) {

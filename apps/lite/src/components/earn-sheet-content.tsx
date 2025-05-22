@@ -197,6 +197,7 @@ export function EarnSheetContent({ vaultAddress, asset }: { vaultAddress: Addres
   variables={depositTxnConfig}
   disabled={!inputValue}
   beforeTxn={async () => {
+    
     if (bridgeRequired) {
       console.log((Number(textInputValue) - 
           Number(
