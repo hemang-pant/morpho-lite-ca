@@ -20,7 +20,7 @@ import {
 
 export const APP_DETAILS = {
   // NOTE: Should always match the title in `index.html` (won't break anything, but should be correct)
-  name: import.meta.env.VITE_APP_TITLE,
+  name: 'Chain Abstraction',
   description: "A minimal and open-source version of the main Morpho App",
   url: "https://lite.morpho.org",
   icon: "/favicon.svg",
