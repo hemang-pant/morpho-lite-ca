@@ -234,7 +234,7 @@ export function EarnSheetContent({ vaultAddress, asset }: { vaultAddress: Addres
     void refetchMaxes();
   }}
 >
-  {bridgeRequired ? "Bridge & Deposit" : "Deposit"}
+  {bridgeRequired ? "Deposit" : "Deposit"}
 </TransactionButton>
           )}
         </TabsContent>

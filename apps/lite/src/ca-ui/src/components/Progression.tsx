@@ -139,8 +139,8 @@ const Progress: React.FC<{
       ? (setManualDone(true),
         window.setTimeout(() => {
           close();
-        }, 1000),
-        console.log('manual step 2 donee', manualDone))
+        }, 3000),
+        console.log('progress State finished', manualDone))
       : null;
   };
   useEffect(() => {
@@ -153,7 +153,7 @@ const Progress: React.FC<{
 
   return (
     <MainContainer $display={$display}>
-      {inProgressState === 'success' && manualDone == false ? (
+      { manualDone ? (
         <Video
           src={VIDEO_LINKS['success']}
           autoPlay
