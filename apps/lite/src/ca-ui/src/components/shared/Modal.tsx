@@ -52,6 +52,7 @@ const ModalOverlay = styled.div<{ $isopen: boolean; $alwaysOnTop: boolean }>`
   justify-content: center;
   align-items: center;
   position: fixed;
+  pointer-events: all;
   ${({ $alwaysOnTop }) =>
     $alwaysOnTop &&
     css`
@@ -101,6 +102,14 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ isopen, children }) => {
+  React.useEffect(() => {
+    if (isopen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [isopen]);
+
   return (
     <ModalOverlay $alwaysOnTop={true} $isopen={isopen}>
       <ModalContainer $alwaysOnTop={true} $isopen={isopen}>

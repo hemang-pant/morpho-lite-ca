@@ -125,7 +125,13 @@ export function EarnSheetContent({ vaultAddress, asset }: { vaultAddress: Addres
       : undefined;
 
   return (
-    <SheetContent className="bg-background z-[9999] w-full gap-3 overflow-y-scroll sm:w-[500px] sm:min-w-[500px] sm:max-w-[500px]">
+    <SheetContent
+      className="bg-background ${isModalOpen ? 'pointer-events-none' : '' z-[9999] w-full gap-3 overflow-y-scroll sm:w-[500px] sm:min-w-[500px] sm:max-w-[500px]"
+      onInteractOutside={(e) => {
+        e.preventDefault();
+        // e.stopPropagation();
+      }}
+    >
       <Toaster theme="dark" position="bottom-left" richColors />
       <SheetHeader>
         <SheetTitle>Your Position</SheetTitle>

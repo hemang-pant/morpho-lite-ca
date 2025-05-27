@@ -136,6 +136,7 @@ export function TransactionButton<
               toast.error(err.shortMessage);
               console.log(err.message);
             } else {
+              setTxnHash(txnHash);
               toast(`Broadcasted transaction ${txnHash?.slice(0, 8)}.`, {
                 duration: 10_0000,
                 action: chain.blockExplorers
@@ -150,10 +151,10 @@ export function TransactionButton<
                     }
                   : undefined,
               });
-              setTxnHash(txnHash);
             }
           },
         });
+        setIsWaitingForUser(false);
       }}
       disabled={disabled || variables === undefined || isWaitingForUser || txnHash !== undefined}
     >
