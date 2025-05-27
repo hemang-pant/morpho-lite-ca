@@ -37,6 +37,12 @@ const STYLE_INPUT_WRAPPER =
   "bg-primary hover:bg-secondary flex flex-col gap-4 rounded-2xl p-4 transition-colors duration-200 ease-in-out";
 const STYLE_INPUT_HEADER = "text-secondary-foreground flex items-center justify-between text-xs font-light";
 
+let val = 0;
+
+export const supplyVal = (): number => {
+  return val;
+};
+
 export function EarnSheetContent({ vaultAddress, asset }: { vaultAddress: Address; asset: Token }) {
   const { address: userAddress } = useAccount();
 
@@ -248,7 +254,14 @@ export function EarnSheetContent({ vaultAddress, asset }: { vaultAddress: Addres
               decimals={asset.decimals}
               value={textInputValue}
               maxValue={maxes?.[0]}
-              onChange={setTextInputValue}
+              onChange={
+                // setTextInputValue
+                (value) => {
+                  setTextInputValue(value);
+                  val = Number(value);
+                  console.log("val", val);
+                }
+              }
             />
           </div>
           <TransactionButton

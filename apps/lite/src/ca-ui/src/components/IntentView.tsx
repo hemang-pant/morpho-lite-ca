@@ -7,8 +7,9 @@ import { MainContainerBase } from './shared/Container';
 import { IMAGE_LINKS } from '../utils/assetList';
 import { getReadableNumber } from '../utils/commonFunction';
 import type { Intent } from '@arcana/ca-sdk';
-// import { getSupplyVal } from 'src/components/transactions/Supply/SupplyActions';
 import { useUnifiedBalance } from '../hooks/useUnifiedBalance';
+import Decimal from 'decimal.js';
+import { supplyVal } from '@/components/earn-sheet-content';
 
 const MainContainer = styled(MainContainerBase)``;
 const Root = styled(Accordion.Root)`
@@ -319,7 +320,7 @@ const IntentView: React.FC<{
             <HeaderRight>
               <TotalFees>
                 {
-                // getReadableNumber(new Decimal(getSupplyVal()).add(intent.fees.total).toString())
+                getReadableNumber(new Decimal(supplyVal()).add(intent.fees.total).toString())
                 }{' '}
                 {intent?.token?.symbol}
               </TotalFees>
