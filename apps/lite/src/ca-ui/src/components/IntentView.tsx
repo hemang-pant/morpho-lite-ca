@@ -297,7 +297,10 @@ const IntentView: React.FC<{
 
   if (!intent) {
     return <></>;
-  }
+  };
+
+  console.log('total: ',getReadableNumber(new Decimal(supplyVal()).add(intent.fees.total).toString()))
+  console.log('inputVal:', supplyVal())
 
   return (
     <MainContainer $display={$display}>
@@ -320,8 +323,8 @@ const IntentView: React.FC<{
             <HeaderRight>
               <TotalFees>
                 {
-                getReadableNumber(new Decimal(supplyVal()).add(intent.fees.total).toString())
-                }{' '}
+(Number(intent.sourcesTotal || 0) / Number(rates[intent.token.symbol])).toString()       
+}{' '}
                 {intent?.token?.symbol}
               </TotalFees>
               {intent?.token?.symbol && rates?.[intent.token.symbol] && (
