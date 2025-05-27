@@ -182,7 +182,9 @@ export function EarnSheetContent({ vaultAddress, asset }: { vaultAddress: Addres
             </div>
             <TokenAmountInput
               decimals={asset.decimals}
-              value={textInputValue}
+              value={
+                textInputValue
+              }
               maxValue={
                 caBalances.find((balance) => balance.symbol === (asset.symbol! == "WETH" ? "ETH" : asset.symbol))
                   ?.balance && asset.decimals !== undefined
@@ -193,7 +195,13 @@ export function EarnSheetContent({ vaultAddress, asset }: { vaultAddress: Addres
                     )
                   : maxes?.[2]
               }
-              onChange={setTextInputValue}
+              onChange={
+                (value) => {
+                  setTextInputValue(value);
+                  val = Number(value);
+                  console.log("val", val);
+                }
+              }
             />
           </div>
           {approvalTxnConfig ? (
@@ -209,7 +217,7 @@ export function EarnSheetContent({ vaultAddress, asset }: { vaultAddress: Addres
   variables={depositTxnConfig}
   disabled={!inputValue}
   beforeTxn={async () => {
-    
+    val = Number(textInputValue);
     if (bridgeRequired) {
       console.log((Number(textInputValue) - 
           Number(
