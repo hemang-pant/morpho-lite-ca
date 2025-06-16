@@ -169,8 +169,8 @@ importers:
   apps/lite:
     dependencies:
       '@arcana/ca-sdk':
-        specifier: ^0.0.7-beta.1
-        version: 0.0.7(bufferutil@4.0.9)(google-protobuf@3.21.4)(typescript@5.7.3)(utf-8-validate@5.0.10)(vitest@3.1.1(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.4.2)(jsdom@26.0.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.29.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(zod@3.24.2)
+        specifier: 1.0.0-beta.13
+        version: 1.0.0-beta.13(bufferutil@4.0.9)(google-protobuf@3.21.4)(typescript@5.7.3)(utf-8-validate@5.0.10)(vitest@3.1.1(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.4.2)(jsdom@26.0.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.29.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(zod@3.24.2)
       '@arcana/ca-wagmi':
         specifier: ^0.0.6
         version: 0.0.6(@tanstack/react-query@5.69.0(react@19.0.0))(bufferutil@4.0.9)(ethers@5.8.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(google-protobuf@3.21.4)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.7.3)(utf-8-validate@5.0.10)(vitest@3.1.1(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.4.2)(jsdom@26.0.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.29.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(wagmi@2.14.15(@tanstack/query-core@5.69.0)(@tanstack/react-query@5.69.0(react@19.0.0))(@types/react@19.0.12)(bufferutil@4.0.9)(react@19.0.0)(typescript@5.7.3)(utf-8-validate@5.0.10)(viem@2.23.15(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.24.2))(zod@3.24.2))(zod@3.24.2)
@@ -179,7 +179,7 @@ importers:
         version: 5.9.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@merkl/api':
         specifier: ^0.20.171
-        version: 0.20.171(@opentelemetry/api@1.9.0)(@types/pg@8.6.1)(bufferutil@4.0.9)(graphql@16.10.0)(openapi-types@12.1.3)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.24.2)
+        version: 0.20.171(@opentelemetry/api@1.9.0)(@types/pg@8.6.1)(bufferutil@4.0.9)(graphql@16.9.0)(openapi-types@12.1.3)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.24.2)
       '@morpho-org/blue-sdk':
         specifier: ^2.3.1
         version: 2.3.2(@morpho-org/morpho-ts@2.2.0)
@@ -206,7 +206,7 @@ importers:
         version: 10.5.0
       gql.tada:
         specifier: ^1.8.10
-        version: 1.8.10(graphql@16.10.0)(typescript@5.7.3)
+        version: 1.8.10(graphql@16.9.0)(typescript@5.7.3)
       humanize-duration:
         specifier: ^3.32.1
         version: 3.32.1
@@ -242,7 +242,7 @@ importers:
         version: 1.0.7(tailwindcss@4.0.17)
       urql:
         specifier: ^4.2.2
-        version: 4.2.2(@urql/core@5.1.1(graphql@16.10.0))(react@19.0.0)
+        version: 4.2.2(@urql/core@5.1.1(graphql@16.9.0))(react@19.0.0)
       viem:
         specifier: ~2.23.5
         version: 2.23.15(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.24.2)
@@ -481,8 +481,8 @@ packages:
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
 
-  '@arcana/ca-common@0.0.14':
-    resolution: {integrity: sha512-pXYellDQN5jg2A9kGCxtkYMU4YbJUdvtCs7b9E+/ija9z3+pJj+8J73+JNXFfdO0a5RjamvoM/206WRSXn+7YA==}
+  '@arcana/ca-common@0.0.17':
+    resolution: {integrity: sha512-ViRzpsHvz1/YjU+urSOwgYymW2PMR9BfSGfwtuqy2eC+HC5AfUfxGv0TQIawWt/8tBWe9YUARIC/a3m5yVgRsQ==}
     peerDependencies:
       '@cosmjs/proto-signing': ^0.33.0
       '@cosmjs/stargate': ^0.33.0
@@ -505,8 +505,8 @@ packages:
   '@arcana/ca-sdk@0.0.5':
     resolution: {integrity: sha512-n2LBKiUFUMe0wAz2dM3NpI/eCf9+7zDqECg9Fl1AeD6TIFY6gR6/H0h1nMfaPqw+V6XpYNNxVpos0BEirRqneQ==}
 
-  '@arcana/ca-sdk@0.0.7':
-    resolution: {integrity: sha512-8CO2/UIpzpDDSanKw6Bmr/I9S9buqLPjrHVICTiQhZUTx4pb3JgjAyMHGwdxFeYgiRsFg5c5/YbBijnwIWqJ6w==}
+  '@arcana/ca-sdk@1.0.0-beta.13':
+    resolution: {integrity: sha512-w0JChd6NHdNmemAFsmlxT5aC4hrifbEs4ju/AEznMotgrsDCYxxwxY8+G+ScEpi0Li9fVL1PQIgSgGGwPQbG9g==}
 
   '@arcana/ca-wagmi@0.0.6':
     resolution: {integrity: sha512-65xgdn7IG5gMbOk8P27hOj4TPobdLG0+YJDFYWXTb9P3e87m3cpkc2Ha7SESNtHbO2JPizwBBuSLVPPC+bLXqg==}
@@ -6823,6 +6823,9 @@ packages:
   ethers@5.8.0:
     resolution: {integrity: sha512-DUq+7fHrCg1aPDFCHx6UIPb3nmt2XMpM7Y/g2gLhsl3lIBqeAfOJIl1qEvRf2uq3BiKxmh6Fh5pfp2ieyek7Kg==}
 
+  event-iterator@2.0.0:
+    resolution: {integrity: sha512-KGft0ldl31BZVV//jj+IAIGCxkvvUkkON+ScH6zfoX+l+omX6001ggyRSpI0Io2Hlro0ThXotswCtfzS8UkIiQ==}
+
   event-target-shim@5.0.1:
     resolution: {integrity: sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==}
     engines: {node: '>=6'}
@@ -7651,6 +7654,13 @@ packages:
     peerDependencies:
       ws: '*'
 
+  it-stream-types@2.0.2:
+    resolution: {integrity: sha512-Rz/DEZ6Byn/r9+/SBCuJhpPATDF9D+dz5pbgSUyBsCDtza6wtNATrz/jz1gDyNanC3XdLboriHnOC925bZRBww==}
+
+  it-ws@6.1.5:
+    resolution: {integrity: sha512-uWjMtpy5HqhSd/LlrlP3fhYrr7rUfJFFMABv0F5d6n13Q+0glhZthwUKpEAVhDrXY95Tb1RB5lLqqef+QbVNaw==}
+    engines: {node: '>=16.0.0', npm: '>=7.0.0'}
+
   jackspeak@3.4.3:
     resolution: {integrity: sha512-OGlZQpz2yfahA/Rd1Y8Cd9SIEsqvXkLVoSw/cgwhnhFMDbsQFeZYoJJ7bIZBS9BcamUW96asq/npPWugM+RQBw==}
 
@@ -8168,6 +8178,9 @@ packages:
 
   muggle-string@0.4.1:
     resolution: {integrity: sha512-VNTrAak/KhO2i8dqqnqnAHOa3cYBwXEZe9h+D5h/1ZqFSTEFHdM65lR7RoIqq3tBBYavsOXV84NoHXZ0AkPyqQ==}
+
+  multiformats@13.3.7:
+    resolution: {integrity: sha512-meL9DERHj+fFVWoOX9fXqfcYcSpUfSYJPcFvDPKrxitICbwAoWR+Ut4j5NO9zAT917HUHLQmqzQbAsGNHlDcxQ==}
 
   multiformats@9.9.0:
     resolution: {integrity: sha512-HoMUjhH9T8DDBNT+6xzkrd9ga/XiBI4xLr58LJACwK6G3HTOPeMz4nB4KJs33L2BelrIJa7P0VuNaVF3hMYfjg==}
@@ -9763,6 +9776,9 @@ packages:
   uint8arrays@3.1.0:
     resolution: {integrity: sha512-ei5rfKtoRO8OyOIor2Rz5fhzjThwIHJZ3uyDPnDHTXbP0aMQ1RN/6AI5B5d9dBxJOU+BvOAk7ZQ1xphsX8Lrog==}
 
+  uint8arrays@5.1.0:
+    resolution: {integrity: sha512-vA6nFepEmlSKkMBnLBaUMVvAC4G3CTmO58C12y4sq6WPDOR7mOFYOi7GlrQ4djeSbP6JG9Pv9tJDM97PedRSww==}
+
   uncrypto@0.1.3:
     resolution: {integrity: sha512-Ql87qFHB3s/De2ClA9e0gsnS6zXG27SkTiSJwjCc9MebbfapQfuPzumMIUMi38ezPZVNFcHI9sUIepeQfw8J8Q==}
 
@@ -10474,14 +10490,14 @@ packages:
 
 snapshots:
 
-  '@0no-co/graphql.web@1.1.2(graphql@16.10.0)':
+  '@0no-co/graphql.web@1.1.2(graphql@16.9.0)':
     optionalDependencies:
-      graphql: 16.10.0
+      graphql: 16.9.0
 
-  '@0no-co/graphqlsp@1.12.16(graphql@16.10.0)(typescript@5.7.3)':
+  '@0no-co/graphqlsp@1.12.16(graphql@16.9.0)(typescript@5.7.3)':
     dependencies:
-      '@gql.tada/internal': 1.0.8(graphql@16.10.0)(typescript@5.7.3)
-      graphql: 16.10.0
+      '@gql.tada/internal': 1.0.8(graphql@16.9.0)(typescript@5.7.3)
+      graphql: 16.9.0
       typescript: 5.7.3
 
   '@adobe/css-tools@4.4.2': {}
@@ -10500,7 +10516,7 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.8
       '@jridgewell/trace-mapping': 0.3.25
 
-  '@arcana/ca-common@0.0.14(@cosmjs/proto-signing@0.33.1)(@cosmjs/stargate@0.33.1(bufferutil@4.0.9)(utf-8-validate@5.0.10))(axios@1.8.4)(decimal.js@10.5.0)(fuels@0.100.6(vitest@3.1.1(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.4.2)(jsdom@26.0.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.29.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0)))(google-protobuf@3.21.4)(long@5.3.2)(msgpackr@1.11.4)(viem@2.23.15(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.24.2))':
+  '@arcana/ca-common@0.0.17(@cosmjs/proto-signing@0.33.1)(@cosmjs/stargate@0.33.1(bufferutil@4.0.9)(utf-8-validate@5.0.10))(axios@1.8.4)(decimal.js@10.5.0)(fuels@0.100.6(vitest@3.1.1(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.4.2)(jsdom@26.0.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.29.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0)))(google-protobuf@3.21.4)(long@5.3.2)(msgpackr@1.11.4)(viem@2.23.15(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.24.2))':
     dependencies:
       '@bufbuild/protobuf': 2.4.0
       '@cosmjs/proto-signing': 0.33.1
@@ -10560,9 +10576,9 @@ snapshots:
       - vitest
       - zod
 
-  '@arcana/ca-sdk@0.0.7(bufferutil@4.0.9)(google-protobuf@3.21.4)(typescript@5.7.3)(utf-8-validate@5.0.10)(vitest@3.1.1(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.4.2)(jsdom@26.0.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.29.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(zod@3.24.2)':
+  '@arcana/ca-sdk@1.0.0-beta.13(bufferutil@4.0.9)(google-protobuf@3.21.4)(typescript@5.7.3)(utf-8-validate@5.0.10)(vitest@3.1.1(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.4.2)(jsdom@26.0.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.29.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(zod@3.24.2)':
     dependencies:
-      '@arcana/ca-common': 0.0.14(@cosmjs/proto-signing@0.33.1)(@cosmjs/stargate@0.33.1(bufferutil@4.0.9)(utf-8-validate@5.0.10))(axios@1.8.4)(decimal.js@10.5.0)(fuels@0.100.6(vitest@3.1.1(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.4.2)(jsdom@26.0.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.29.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0)))(google-protobuf@3.21.4)(long@5.3.2)(msgpackr@1.11.4)(viem@2.23.15(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.24.2))
+      '@arcana/ca-common': 0.0.17(@cosmjs/proto-signing@0.33.1)(@cosmjs/stargate@0.33.1(bufferutil@4.0.9)(utf-8-validate@5.0.10))(axios@1.8.4)(decimal.js@10.5.0)(fuels@0.100.6(vitest@3.1.1(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.4.2)(jsdom@26.0.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.29.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0)))(google-protobuf@3.21.4)(long@5.3.2)(msgpackr@1.11.4)(viem@2.23.15(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.24.2))
       '@cosmjs/proto-signing': 0.33.1
       '@cosmjs/stargate': 0.33.1(bufferutil@4.0.9)(utf-8-validate@5.0.10)
       '@metamask/rpc-errors': 7.0.2
@@ -10571,6 +10587,7 @@ snapshots:
       axios: 1.8.4
       decimal.js: 10.5.0
       fuels: 0.100.6(vitest@3.1.1(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.4.2)(jsdom@26.0.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.29.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))
+      it-ws: 6.1.5(bufferutil@4.0.9)(utf-8-validate@5.0.10)
       long: 5.3.2
       msgpackr: 1.11.4
       viem: 2.23.15(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.24.2)
@@ -11966,14 +11983,14 @@ snapshots:
     dependencies:
       elysia: 1.1.26(@sinclair/typebox@0.34.33)(openapi-types@12.1.3)(typescript@5.7.3)
 
-  '@elysiajs/opentelemetry@1.2.0(elysia@1.1.26(@sinclair/typebox@0.34.33)(openapi-types@12.1.3)(typescript@5.7.3))(graphql@16.10.0)':
+  '@elysiajs/opentelemetry@1.2.0(elysia@1.1.26(@sinclair/typebox@0.34.33)(openapi-types@12.1.3)(typescript@5.7.3))(graphql@16.9.0)':
     dependencies:
       '@opentelemetry/api': 1.9.0
       '@opentelemetry/instrumentation': 0.54.2(@opentelemetry/api@1.9.0)
       '@opentelemetry/sdk-node': 0.54.2(@opentelemetry/api@1.9.0)
       elysia: 1.1.26(@sinclair/typebox@0.34.33)(openapi-types@12.1.3)(typescript@5.7.3)
     optionalDependencies:
-      graphql: 16.10.0
+      graphql: 16.9.0
     transitivePeerDependencies:
       - supports-color
 
@@ -13117,17 +13134,17 @@ snapshots:
       - encoding
       - supports-color
 
-  '@gql.tada/cli-utils@1.6.3(@0no-co/graphqlsp@1.12.16(graphql@16.10.0)(typescript@5.7.3))(graphql@16.10.0)(typescript@5.7.3)':
+  '@gql.tada/cli-utils@1.6.3(@0no-co/graphqlsp@1.12.16(graphql@16.9.0)(typescript@5.7.3))(graphql@16.9.0)(typescript@5.7.3)':
     dependencies:
-      '@0no-co/graphqlsp': 1.12.16(graphql@16.10.0)(typescript@5.7.3)
-      '@gql.tada/internal': 1.0.8(graphql@16.10.0)(typescript@5.7.3)
-      graphql: 16.10.0
+      '@0no-co/graphqlsp': 1.12.16(graphql@16.9.0)(typescript@5.7.3)
+      '@gql.tada/internal': 1.0.8(graphql@16.9.0)(typescript@5.7.3)
+      graphql: 16.9.0
       typescript: 5.7.3
 
-  '@gql.tada/internal@1.0.8(graphql@16.10.0)(typescript@5.7.3)':
+  '@gql.tada/internal@1.0.8(graphql@16.9.0)(typescript@5.7.3)':
     dependencies:
-      '@0no-co/graphql.web': 1.1.2(graphql@16.10.0)
-      graphql: 16.10.0
+      '@0no-co/graphql.web': 1.1.2(graphql@16.9.0)
+      graphql: 16.9.0
       typescript: 5.7.3
 
   '@graphql-typed-document-node/core@3.2.0(graphql@16.10.0)':
@@ -13168,7 +13185,7 @@ snapshots:
       browser-headers: 0.4.1
       google-protobuf: 3.21.4
 
-  '@inkjs/ui@2.0.0(ink@5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@18.3.1)(utf-8-validate@5.0.10))':
+  '@inkjs/ui@2.0.0(ink@5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@19.0.0)(utf-8-validate@5.0.10))':
     dependencies:
       chalk: 5.4.1
       cli-spinners: 3.2.0
@@ -13228,12 +13245,12 @@ snapshots:
     dependencies:
       '@lit-labs/ssr-dom-shim': 1.3.0
 
-  '@merkl/api@0.20.171(@opentelemetry/api@1.9.0)(@types/pg@8.6.1)(bufferutil@4.0.9)(graphql@16.10.0)(openapi-types@12.1.3)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.24.2)':
+  '@merkl/api@0.20.171(@opentelemetry/api@1.9.0)(@types/pg@8.6.1)(bufferutil@4.0.9)(graphql@16.9.0)(openapi-types@12.1.3)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.24.2)':
     dependencies:
       '@bogeychan/elysia-logger': 0.1.8(elysia@1.1.26(@sinclair/typebox@0.34.33)(openapi-types@12.1.3)(typescript@5.7.3))
       '@elysiajs/cors': 1.2.0(elysia@1.1.26(@sinclair/typebox@0.34.33)(openapi-types@12.1.3)(typescript@5.7.3))
       '@elysiajs/eden': 1.2.0(elysia@1.1.26(@sinclair/typebox@0.34.33)(openapi-types@12.1.3)(typescript@5.7.3))
-      '@elysiajs/opentelemetry': 1.2.0(elysia@1.1.26(@sinclair/typebox@0.34.33)(openapi-types@12.1.3)(typescript@5.7.3))(graphql@16.10.0)
+      '@elysiajs/opentelemetry': 1.2.0(elysia@1.1.26(@sinclair/typebox@0.34.33)(openapi-types@12.1.3)(typescript@5.7.3))(graphql@16.9.0)
       '@elysiajs/swagger': 1.2.2(elysia@1.1.26(@sinclair/typebox@0.34.33)(openapi-types@12.1.3)(typescript@5.7.3))
       '@ethersproject/abi': 5.8.0
       '@google-cloud/storage': 7.16.0
@@ -13259,7 +13276,7 @@ snapshots:
       elysia-rate-limit: 4.3.0(elysia@1.1.26(@sinclair/typebox@0.34.33)(openapi-types@12.1.3)(typescript@5.7.3))
       ethers: 5.8.0(bufferutil@4.0.9)(utf-8-validate@5.0.10)
       ethers-types: 3.18.1(ethers@5.8.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))
-      graphql-request: 7.1.2(graphql@16.10.0)
+      graphql-request: 7.1.2(graphql@16.9.0)
       jsbi: 4.3.2
       json-shrink: 0.0.124
       lodash: 4.17.21
@@ -16041,13 +16058,13 @@ snapshots:
       figures: 6.1.0
       glob: 11.0.1
       ink: 5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@18.3.1)(utf-8-validate@5.0.10)
-      ink-big-text: 2.0.0(ink@5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
-      ink-gradient: 3.0.0(ink@5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@18.3.1)(utf-8-validate@5.0.10))
-      ink-select-input: 6.0.0(ink@5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
-      ink-spinner: 5.0.0(ink@5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
-      ink-text-input: 6.0.0(ink@5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)
+      ink-big-text: 2.0.0(ink@5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@19.0.0)(utf-8-validate@5.0.10))(react@18.3.1)
+      ink-gradient: 3.0.0(ink@5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@19.0.0)(utf-8-validate@5.0.10))
+      ink-select-input: 6.0.0(ink@5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@19.0.0)(utf-8-validate@5.0.10))(react@18.3.1)
+      ink-spinner: 5.0.0(ink@5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@19.0.0)(utf-8-validate@5.0.10))(react@18.3.1)
+      ink-text-input: 6.0.0(ink@5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@19.0.0)(utf-8-validate@5.0.10))(react@18.3.1)
       json-bigint: 1.0.0
-      pastel: 3.0.0(ink@5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)(zod@3.24.2)
+      pastel: 3.0.0(ink@5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@19.0.0)(utf-8-validate@5.0.10))(react@18.3.1)(zod@3.24.2)
       react: 18.3.1
       solc: 0.8.29
       tiny-jsonc: 1.0.2
@@ -16889,9 +16906,9 @@ snapshots:
   '@unrs/resolver-binding-win32-x64-msvc@1.3.2':
     optional: true
 
-  '@urql/core@5.1.1(graphql@16.10.0)':
+  '@urql/core@5.1.1(graphql@16.9.0)':
     dependencies:
-      '@0no-co/graphql.web': 1.1.2(graphql@16.10.0)
+      '@0no-co/graphql.web': 1.1.2(graphql@16.9.0)
       wonka: 6.3.5
     transitivePeerDependencies:
       - graphql
@@ -19608,6 +19625,8 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
+  event-iterator@2.0.0: {}
+
   event-target-shim@5.0.1: {}
 
   eventemitter2@6.4.9: {}
@@ -20074,12 +20093,12 @@ snapshots:
 
   gopd@1.2.0: {}
 
-  gql.tada@1.8.10(graphql@16.10.0)(typescript@5.7.3):
+  gql.tada@1.8.10(graphql@16.9.0)(typescript@5.7.3):
     dependencies:
-      '@0no-co/graphql.web': 1.1.2(graphql@16.10.0)
-      '@0no-co/graphqlsp': 1.12.16(graphql@16.10.0)(typescript@5.7.3)
-      '@gql.tada/cli-utils': 1.6.3(@0no-co/graphqlsp@1.12.16(graphql@16.10.0)(typescript@5.7.3))(graphql@16.10.0)(typescript@5.7.3)
-      '@gql.tada/internal': 1.0.8(graphql@16.10.0)(typescript@5.7.3)
+      '@0no-co/graphql.web': 1.1.2(graphql@16.9.0)
+      '@0no-co/graphqlsp': 1.12.16(graphql@16.9.0)(typescript@5.7.3)
+      '@gql.tada/cli-utils': 1.6.3(@0no-co/graphqlsp@1.12.16(graphql@16.9.0)(typescript@5.7.3))(graphql@16.9.0)(typescript@5.7.3)
+      '@gql.tada/internal': 1.0.8(graphql@16.9.0)(typescript@5.7.3)
       typescript: 5.7.3
     transitivePeerDependencies:
       - '@gql.tada/svelte-support'
@@ -20113,10 +20132,10 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  graphql-request@7.1.2(graphql@16.10.0):
+  graphql-request@7.1.2(graphql@16.9.0):
     dependencies:
-      '@graphql-typed-document-node/core': 3.2.0(graphql@16.10.0)
-      graphql: 16.10.0
+      '@graphql-typed-document-node/core': 3.2.0(graphql@16.9.0)
+      graphql: 16.9.0
 
   graphql-tag@2.12.6(graphql@16.10.0):
     dependencies:
@@ -20335,14 +20354,14 @@ snapshots:
 
   ini@2.0.0: {}
 
-  ink-big-text@2.0.0(ink@5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1):
+  ink-big-text@2.0.0(ink@5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@19.0.0)(utf-8-validate@5.0.10))(react@18.3.1):
     dependencies:
       cfonts: 3.3.0
       ink: 5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@18.3.1)(utf-8-validate@5.0.10)
       prop-types: 15.8.1
       react: 18.3.1
 
-  ink-gradient@3.0.0(ink@5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@18.3.1)(utf-8-validate@5.0.10)):
+  ink-gradient@3.0.0(ink@5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@19.0.0)(utf-8-validate@5.0.10)):
     dependencies:
       '@types/gradient-string': 1.1.6
       gradient-string: 2.0.2
@@ -20350,7 +20369,7 @@ snapshots:
       prop-types: 15.8.1
       strip-ansi: 7.1.0
 
-  ink-select-input@6.0.0(ink@5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1):
+  ink-select-input@6.0.0(ink@5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@19.0.0)(utf-8-validate@5.0.10))(react@18.3.1):
     dependencies:
       figures: 6.1.0
       ink: 5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@18.3.1)(utf-8-validate@5.0.10)
@@ -20358,13 +20377,13 @@ snapshots:
       react: 18.3.1
       to-rotated: 1.0.0
 
-  ink-spinner@5.0.0(ink@5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1):
+  ink-spinner@5.0.0(ink@5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@19.0.0)(utf-8-validate@5.0.10))(react@18.3.1):
     dependencies:
       cli-spinners: 2.9.2
       ink: 5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@18.3.1)(utf-8-validate@5.0.10)
       react: 18.3.1
 
-  ink-text-input@6.0.0(ink@5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1):
+  ink-text-input@6.0.0(ink@5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@19.0.0)(utf-8-validate@5.0.10))(react@18.3.1):
     dependencies:
       chalk: 5.4.1
       ink: 5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@18.3.1)(utf-8-validate@5.0.10)
@@ -20569,6 +20588,19 @@ snapshots:
   isows@1.0.6(ws@8.18.1(bufferutil@4.0.9)(utf-8-validate@5.0.10)):
     dependencies:
       ws: 8.18.1(bufferutil@4.0.9)(utf-8-validate@5.0.10)
+
+  it-stream-types@2.0.2: {}
+
+  it-ws@6.1.5(bufferutil@4.0.9)(utf-8-validate@5.0.10):
+    dependencies:
+      '@types/ws': 8.18.1
+      event-iterator: 2.0.0
+      it-stream-types: 2.0.2
+      uint8arrays: 5.1.0
+      ws: 8.18.1(bufferutil@4.0.9)(utf-8-validate@5.0.10)
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
 
   jackspeak@3.4.3:
     dependencies:
@@ -21072,6 +21104,8 @@ snapshots:
 
   muggle-string@0.4.1: {}
 
+  multiformats@13.3.7: {}
+
   multiformats@9.9.0: {}
 
   nanoid@3.3.11: {}
@@ -21383,9 +21417,9 @@ snapshots:
 
   pascalcase@0.1.1: {}
 
-  pastel@3.0.0(ink@5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@18.3.1)(utf-8-validate@5.0.10))(react@18.3.1)(zod@3.24.2):
+  pastel@3.0.0(ink@5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@19.0.0)(utf-8-validate@5.0.10))(react@18.3.1)(zod@3.24.2):
     dependencies:
-      '@inkjs/ui': 2.0.0(ink@5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@18.3.1)(utf-8-validate@5.0.10))
+      '@inkjs/ui': 2.0.0(ink@5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@19.0.0)(utf-8-validate@5.0.10))
       commander: 12.1.0
       decamelize: 6.0.0
       ink: 5.2.0(@types/react@19.0.12)(bufferutil@4.0.9)(react@18.3.1)(utf-8-validate@5.0.10)
@@ -22806,6 +22840,10 @@ snapshots:
     dependencies:
       multiformats: 9.9.0
 
+  uint8arrays@5.1.0:
+    dependencies:
+      multiformats: 13.3.7
+
   uncrypto@0.1.3: {}
 
   undici-types@6.20.0: {}
@@ -22925,9 +22963,9 @@ snapshots:
       punycode: 1.4.1
       qs: 6.14.0
 
-  urql@4.2.2(@urql/core@5.1.1(graphql@16.10.0))(react@19.0.0):
+  urql@4.2.2(@urql/core@5.1.1(graphql@16.9.0))(react@19.0.0):
     dependencies:
-      '@urql/core': 5.1.1(graphql@16.10.0)
+      '@urql/core': 5.1.1(graphql@16.9.0)
       react: 19.0.0
       wonka: 6.3.5
 
