@@ -18,7 +18,7 @@
     "tada:cache": "gql-tada turbo"
   },
   "dependencies": {
-    "@arcana/ca-sdk": "1.0.0-beta.13",
+    "@arcana/ca-sdk": "1.1.0",
     "@arcana/ca-wagmi": "^0.0.6",
     "@ark-ui/react": "^5.0.0",
     "@merkl/api": "^0.20.171",
