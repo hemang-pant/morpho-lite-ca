@@ -169,8 +169,8 @@ importers:
   apps/lite:
     dependencies:
       '@arcana/ca-sdk':
-        specifier: 1.1.0
-        version: 1.1.0(bufferutil@4.0.9)(google-protobuf@3.21.4)(typescript@5.7.3)(utf-8-validate@5.0.10)(vitest@3.1.1(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.4.2)(jsdom@26.0.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.29.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(zod@3.24.2)
+        specifier: 1.1.1
+        version: 1.1.1(bufferutil@4.0.9)(google-protobuf@3.21.4)(typescript@5.7.3)(utf-8-validate@5.0.10)(vitest@3.1.1(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.4.2)(jsdom@26.0.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.29.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(zod@3.24.2)
       '@arcana/ca-wagmi':
         specifier: ^0.0.6
         version: 0.0.6(@tanstack/react-query@5.69.0(react@19.0.0))(bufferutil@4.0.9)(ethers@5.8.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(google-protobuf@3.21.4)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(typescript@5.7.3)(utf-8-validate@5.0.10)(vitest@3.1.1(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.4.2)(jsdom@26.0.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.29.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(wagmi@2.14.15(@tanstack/query-core@5.69.0)(@tanstack/react-query@5.69.0(react@19.0.0))(@types/react@19.0.12)(bufferutil@4.0.9)(react@19.0.0)(typescript@5.7.3)(utf-8-validate@5.0.10)(viem@2.23.15(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.24.2))(zod@3.24.2))(zod@3.24.2)
@@ -481,8 +481,17 @@ packages:
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
 
-  '@arcana/ca-common@0.0.23':
-    resolution: {integrity: sha512-NPYRUqLkw4iRVncAiuAi2vjSPFVUT8K85jP9z/IquBaRDBUTa+bTzVv7Z01LcFiNOfBudEG6Pd3S1GEBp6VoFA==}
+  '@arcana/ca-common@0.0.6':
+    resolution: {integrity: sha512-L6Ks+RD5XIbX45uoyK/Q7Zq94D79kxAZDDEg+0I5F81oqvN8/tkrPklkg6AeVKKTOaH7+OSyYHllTaz9a9W3sQ==}
+    peerDependencies:
+      '@cosmjs/proto-signing': ^0.33.0
+      '@cosmjs/stargate': ^0.33.0
+      decimal.js: ^10.4.3
+      fuels: ^0.98.0
+      viem: ^2.22.10
+
+  '@arcana/ca-common@1.0.0':
+    resolution: {integrity: sha512-NcwEqZTBVmqqgTwLJfXn6God0VHZRxAJwnW0ukZLlAAj/NDw+oiEVtYgwXHePmZxnTLpWQiWdS4L1wM5i+USSA==}
     peerDependencies:
       '@cosmjs/proto-signing': ^0.34.0
       '@cosmjs/stargate': ^0.34.0
@@ -493,20 +502,11 @@ packages:
       msgpackr: ^1.11.4
       viem: ^2.31.7
 
-  '@arcana/ca-common@0.0.6':
-    resolution: {integrity: sha512-L6Ks+RD5XIbX45uoyK/Q7Zq94D79kxAZDDEg+0I5F81oqvN8/tkrPklkg6AeVKKTOaH7+OSyYHllTaz9a9W3sQ==}
-    peerDependencies:
-      '@cosmjs/proto-signing': ^0.33.0
-      '@cosmjs/stargate': ^0.33.0
-      decimal.js: ^10.4.3
-      fuels: ^0.98.0
-      viem: ^2.22.10
-
   '@arcana/ca-sdk@0.0.5':
     resolution: {integrity: sha512-n2LBKiUFUMe0wAz2dM3NpI/eCf9+7zDqECg9Fl1AeD6TIFY6gR6/H0h1nMfaPqw+V6XpYNNxVpos0BEirRqneQ==}
 
-  '@arcana/ca-sdk@1.1.0':
-    resolution: {integrity: sha512-7iKmN1Y5QkZD45uzKwLVgZmvzUaUgmepD2wewp9BXi9P8rY1UYMYWuh7mrwXZ4LorsWeZfJ2ghddIQXcO6PJvw==}
+  '@arcana/ca-sdk@1.1.1':
+    resolution: {integrity: sha512-AoHNHzLb7emQgQ8TldDFIeXdYMUGaDZnuZNwk12tC6wwplVb+2QwJ66lVek3pInj8uy4UM0H+7jjAAMwSMgxrA==}
 
   '@arcana/ca-wagmi@0.0.6':
     resolution: {integrity: sha512-65xgdn7IG5gMbOk8P27hOj4TPobdLG0+YJDFYWXTb9P3e87m3cpkc2Ha7SESNtHbO2JPizwBBuSLVPPC+bLXqg==}
@@ -10764,7 +10764,22 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.8
       '@jridgewell/trace-mapping': 0.3.25
 
-  '@arcana/ca-common@0.0.23(@cosmjs/proto-signing@0.34.0)(@cosmjs/stargate@0.34.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(axios@1.8.4)(decimal.js@10.6.0)(fuels@0.101.2(vitest@3.1.1(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.4.2)(jsdom@26.0.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.29.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0)))(google-protobuf@3.21.4)(long@5.3.2)(msgpackr@1.11.4)(viem@2.31.7(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.24.2))':
+  '@arcana/ca-common@0.0.6(@cosmjs/proto-signing@0.33.1)(@cosmjs/stargate@0.33.1(bufferutil@4.0.9)(utf-8-validate@5.0.10))(decimal.js@10.5.0)(fuels@0.98.0(vitest@3.1.1(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.4.2)(jsdom@26.0.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.29.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0)))(google-protobuf@3.21.4)(viem@2.23.15(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.24.2))':
+    dependencies:
+      '@bufbuild/protobuf': 2.4.0
+      '@cosmjs/proto-signing': 0.33.1
+      '@cosmjs/stargate': 0.33.1(bufferutil@4.0.9)(utf-8-validate@5.0.10)
+      '@improbable-eng/grpc-web': 0.15.0(google-protobuf@3.21.4)
+      browser-headers: 0.4.1
+      decimal.js: 10.5.0
+      fuels: 0.98.0(vitest@3.1.1(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.4.2)(jsdom@26.0.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.29.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))
+      long: 5.3.2
+      tslib: 2.8.1
+      viem: 2.23.15(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.24.2)
+    transitivePeerDependencies:
+      - google-protobuf
+
+  '@arcana/ca-common@1.0.0(@cosmjs/proto-signing@0.34.0)(@cosmjs/stargate@0.34.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(axios@1.8.4)(decimal.js@10.6.0)(fuels@0.101.2(vitest@3.1.1(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.4.2)(jsdom@26.0.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.29.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0)))(google-protobuf@3.21.4)(long@5.3.2)(msgpackr@1.11.4)(viem@2.31.7(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.24.2))':
     dependencies:
       '@bufbuild/protobuf': 2.6.0
       '@cosmjs/proto-signing': 0.34.0
@@ -10779,21 +10794,6 @@ snapshots:
       msgpackr: 1.11.4
       tslib: 2.8.1
       viem: 2.31.7(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.24.2)
-    transitivePeerDependencies:
-      - google-protobuf
-
-  '@arcana/ca-common@0.0.6(@cosmjs/proto-signing@0.33.1)(@cosmjs/stargate@0.33.1(bufferutil@4.0.9)(utf-8-validate@5.0.10))(decimal.js@10.5.0)(fuels@0.98.0(vitest@3.1.1(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.4.2)(jsdom@26.0.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.29.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0)))(google-protobuf@3.21.4)(viem@2.23.15(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.24.2))':
-    dependencies:
-      '@bufbuild/protobuf': 2.4.0
-      '@cosmjs/proto-signing': 0.33.1
-      '@cosmjs/stargate': 0.33.1(bufferutil@4.0.9)(utf-8-validate@5.0.10)
-      '@improbable-eng/grpc-web': 0.15.0(google-protobuf@3.21.4)
-      browser-headers: 0.4.1
-      decimal.js: 10.5.0
-      fuels: 0.98.0(vitest@3.1.1(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.4.2)(jsdom@26.0.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.29.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))
-      long: 5.3.2
-      tslib: 2.8.1
-      viem: 2.23.15(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.24.2)
     transitivePeerDependencies:
       - google-protobuf
 
@@ -10824,9 +10824,9 @@ snapshots:
       - vitest
       - zod
 
-  '@arcana/ca-sdk@1.1.0(bufferutil@4.0.9)(google-protobuf@3.21.4)(typescript@5.7.3)(utf-8-validate@5.0.10)(vitest@3.1.1(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.4.2)(jsdom@26.0.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.29.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(zod@3.24.2)':
+  '@arcana/ca-sdk@1.1.1(bufferutil@4.0.9)(google-protobuf@3.21.4)(typescript@5.7.3)(utf-8-validate@5.0.10)(vitest@3.1.1(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.4.2)(jsdom@26.0.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.29.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0))(zod@3.24.2)':
     dependencies:
-      '@arcana/ca-common': 0.0.23(@cosmjs/proto-signing@0.34.0)(@cosmjs/stargate@0.34.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(axios@1.8.4)(decimal.js@10.6.0)(fuels@0.101.2(vitest@3.1.1(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.4.2)(jsdom@26.0.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.29.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0)))(google-protobuf@3.21.4)(long@5.3.2)(msgpackr@1.11.4)(viem@2.31.7(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.24.2))
+      '@arcana/ca-common': 1.0.0(@cosmjs/proto-signing@0.34.0)(@cosmjs/stargate@0.34.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(axios@1.8.4)(decimal.js@10.6.0)(fuels@0.101.2(vitest@3.1.1(@types/debug@4.1.12)(@types/node@22.13.14)(jiti@2.4.2)(jsdom@26.0.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))(lightningcss@1.29.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.0)))(google-protobuf@3.21.4)(long@5.3.2)(msgpackr@1.11.4)(viem@2.31.7(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@5.0.10)(zod@3.24.2))
       '@cosmjs/proto-signing': 0.34.0
       '@cosmjs/stargate': 0.34.0(bufferutil@4.0.9)(utf-8-validate@5.0.10)
       '@metamask/safe-event-emitter': 3.1.2
@@ -12085,7 +12085,7 @@ snapshots:
       '@cosmjs/math': 0.34.0
       '@cosmjs/utils': 0.34.0
       '@noble/curves': 1.9.2
-      '@noble/hashes': 1.7.1
+      '@noble/hashes': 1.8.0
       bn.js: 5.2.1
       libsodium-wrappers-sumo: 0.7.15
 
@@ -21065,7 +21065,7 @@ snapshots:
       event-iterator: 2.0.0
       it-stream-types: 2.0.2
       uint8arrays: 5.1.0
-      ws: 8.18.1(bufferutil@4.0.9)(utf-8-validate@5.0.10)
+      ws: 8.18.2(bufferutil@4.0.9)(utf-8-validate@5.0.10)
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
